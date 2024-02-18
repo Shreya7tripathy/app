@@ -1,0 +1,48 @@
+<!-- Add Bootstrap classes for styling -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/
+3.3.6/css/bootstrap.min.css">
+</s:form>
+<!-- Include jQuery from the GoogleCDN -->
+<script src="//code.jquery.com/jquery-1.10.2.
+min.js"></script>
+<!-- Include the jQuery Validation Library -->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery.Validation/
+v1.14.0/jquery.validate.min.js"></script>
+<div class="container">
+    <h2>Register User</h2>
+    <%--  Display any validation errors --%>
+    <div id="errores">
+
+    </div>
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5 mb-4">Register</h1>
+
+        <form method="post" action="{{ url_for('register') }}">
+            {{ form.csrf_token }}
+            <div class="form-group">
+                {{ form.username.label(class="form-control-label") }}
+                {{ form.username(class="form-control") }}
+            </div>
+
+            <!-- Add more input fields as needed -->
+            <div class="row">
+
+            </div>
+            
+
+
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+</body>
+</html>

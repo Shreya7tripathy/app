@@ -1,0 +1,74 @@
+<!-- Add Bootstrap classes for styling -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/
+3.3.6/css/bootstrap.min.css">
+</s:form>
+<!-- Include jQuery and jQuery UI from a CDN via script references -->
+<script src="//code.jquery.com/jquery-1.12.0.
+min.js"></script>
+<script src= "//code.jquery.com/ui/1.11.4
+/jquery-ui.js"></script>
+<!-- Include Method by Mustache, used to render the template -->
+<script src="http://mustache.github.io/mustache/mustache.
+js"></script>
+<!-- Include the jQuery UI Time Picker Addon -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-
+ui-timepicker-addon/1.4.5/jquery-ui-timepicker
+-addon.min.js"></script>
+<script type="text/javascript">
+
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentorship Programs</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5 mb-4">Mentorship Programs</h1>
+
+        <form method="post" action="{{ url_for('mentorship') }}">
+            {{ form.csrf_token }}
+            <div class="form-group">
+                {{ form.mentor_name.label(class="form-control-label") }}
+                {{ form.mentor_name(class="form-control") }}
+            </div>
+
+            <!-- Add more input fields as needed -->
+            <button id="addField" class="btn btn-primary">Add Mente
+                Name</button>
+                {% for field in mentor_fields %}
+                {{field}}
+                {% endfor %}
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-success") }}
+                    </div>
+                    </form>
+                    <hr/>
+                    {% if records %}
+                    <table class="table table-striped">
+                        <thead>
+                            
+                        </thead>
+                    </table>
+                </div>
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <h2 class="mt-4">Available Mentorship Programs</h2>
+        <ul class="list-group">
+            {% for mentorship_program in mentorship_programs %}
+                <li class="list-group-item">
+                    <strong>{{ mentorship_program.mentor_name }}</strong> is available for mentorship in {{ mentorship_program.expertise }}
+                    <p>{{ mentorship_program.message }}</p>
+                    <small class="text-muted">Created at: {{ mentorship_program.created_at }}</small>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!-- Add Bootstrap classes for styling ? -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/
+3.3.7/css/bootstrap.min.css">
+</s:form>
+<!-- jQuery library (required for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/
+1.12.4/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.
+7/js/bootstrap.min.js"></script>  </head>
+<body>
+    
+</body>
+
+<div class="container">
+    <h2>Basic Table</h2>
+    <p>The .table class adds basic styling (if you include bootstrap.css)
+        to a table:</p>
+        <table class="table">
+
+        </table>
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Startup Platform</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5 mb-4">Welcome to the Entrepreneurial Community</h1>
+
+        <h2>Users</h2>
+        <ul class="list-group">
+            {% for user in users %}
+                <li class="list-group-item">
+                    {{ user.username }} - {{ user.experience }} - {{ user.skills }} - {{ user.interests }}
+                    <a href="{{ url_for('follow', entity_type='user', entity_id=user.id) }}" class="btn btn-primary btn-sm float-right">Follow</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <h2 class="mt-4">Startups</h2>
+        <ul class="list-group">
+            {% for startup in startups %}
+                <li class="list-group-item">
+                    <a href="{{ url_for('startup_profile', startup_id=startup.id) }}">{{ startup.name }}</a>
+                    <a href="{{ url_for('follow', entity_type='startup', entity_id=startup.id) }}" class="btn btn-primary btn-sm float-right">Follow</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+<!-- Include jQuery and Popper.js from CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.
+min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js
+/1.14.7/umd/popper.min.js" integrity="
+sha384-UO2eT0CpHqdSJQ6
+lG
+KvsCZPQuDGK6IvspHK9j/
++xPjucieQvaRm/DownIE
+9RQYy8Ao3AhihJjkXICLB
+Ez7DV4t1Sh3/uO3lr+4O/
+wWvgl/gA/9sObfQmdVcM/
+74+rSRkauZ8g7App" crossorigin="anonymous"></script>
+<!-- Include Bootstrap from CDN -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/boots
+trap/4.5.2/css/bootstrap.min.css" />
+<script src="https://maxcdn.bootstra
+ppcdn.com/bootstrap/4.5.2/js/bootstrap.mi
+n.js"></script>
+
